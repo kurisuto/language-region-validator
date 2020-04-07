@@ -16,7 +16,7 @@ For the convenience of Python programmers, this package also includes some Pytho
 
 However, the ISO standards do not define a set of valid **combinations** of language code and region code.  As far as the ISO standards are concerned, **mn-ie** (Mongolian as written in Ireland) and **cs-jm** (Czech as written in Jamaica) are just as valid as **en-us** (English as written in the United States) or **ja-jp** (Japanese as written in Japan).
 
-One approach to validating a language/region field is to validate the language code and the region code separately, by confirming that each is officially defined in its corresponding standard.  However, this will miss some cases which are almost certainly mistakes.
+One approach to validating a language/region field is to validate the language code and the region code separately, by confirming that each is officially defined in its corresponding standard (**en** is a valid language code, and **us** is a valid country/region code).  However, this approach will miss some cases which are almost certainly mistakes.
 
 For example, in one collection of online linguistic data, I observed some Arabic data labeled with the combination **ar-ar**, which (according to the ISO codes) means "Arabic as written in Argentina".  This is almost certainly not what the creator of the data intended; the creator may have meant "Arabic as written in (Saudi) Arabia" (which would correctly be denoted **ar-sa**), or perhaps wasn't sure what region code to use and just followed the pattern found in some frequently observed combinations where the language code and region code happen to be the same (**de-de**, **es-es**, **fr-fr**, **it-it**).
 
