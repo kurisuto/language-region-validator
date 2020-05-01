@@ -29,7 +29,7 @@ There can obviously be no definitive list of likely combinations of language and
 
 The rule of thumb followed here is that a combination is judged to be "likely" if it has been observed, or could plausibly be observed, as a supported language/region combination in a software product by a major international software vendor (Microsoft, Google, etc.), or in a major repository of modern (i.e. not historical) language data prepared for use in Natural Language Processing.  Some languages, such as Somali, Pashto, or Uighur, might be considered of lower interest from the perspective of international business, but are of interest from a military/intelligence standpoint; languages in this category tend to be found in some collections of linguistic data and therefore are included.
 
-The list represents an informed set of judgment calls; the author holds a Ph.D. in Linguistics are has been working in Natural Language Processing in various capacities since the 1990s.  However, it must be emphasized that there is some irreducible subjectivity in judging what should be included.  Reports of factually mistaken information are, of course, welcome.
+The list represents an informed set of judgment calls.  The author holds a Ph.D. in Linguistics are has been working in Natural Language Processing in various capacities since the 1990s.  However, it must be emphasized that there is some irreducible subjectivity in judging what should be included.  Reports of factually mistaken information are, of course, welcome.
 
 
 ## How the list was prepared
@@ -41,6 +41,8 @@ The list represents an informed set of judgment calls; the author holds a Ph.D. 
   * Lingoes
   * OPUS (an open-source repository of machine translation data)
   * etc.
+
+I merged these into an initial list.
 
 * I programatically compared the language codes against ISO 639-1, and the region codes against ISO 3166-1 alpha-2. I flagged any non-compliant codes and resolved them by hand (either correcting the error, or simply discarding the item if the correct version was already in the list from another source).
 
