@@ -3,22 +3,22 @@
 
 ## Short summary
 
-The main payload of this repository is the file **src/data/language_region_codes.txt**, which contains a researched set of *likely* language/region codes such as **en-us** or **ja-jp**.  It can be used to validate a field containing such language/region codes.
+This project addresses a gap in the validation of language/region codes such as **en-us** or **ja-jp**.
 
-The file is in a simple format (tab-separated columns) which is deliberately agnostic in terms of programming language.
+The main payload of this repository is the data file **src/data/language_region_codes.txt**, which contains a carefully researched set of *likely* language/region codes, intended as a reference for validation.  The file is in a simple format (tab-separated columns) which is deliberately agnostic in terms of programming language.
 
-For the convenience of Python programmers, this package also includes some Python3 wrapper code which loads the file and has a convenience method for determining whether a language/region code is in the set of likely code combinations.  However, the file was deliberately not expressed as a data structure embedded in Python code; you can read and parse the file from whatever programming language you prefer.
+For the convenience of Python programmers, this package also includes some Python3 wrapper code which loads the file and provides convenience methods for determining whether a language/region code is in the set of likely code combinations.  However, the file was deliberately not expressed as a data structure embedded in Python code; you can read and parse the file from whatever programming language you prefer.
 
 ## Rationale
+
+One approach to validating a language/region field is to validate the language code and the region code separately.  For example, we might judge **en-us** to be valid because **en** is a valid language code, and **us** is a valid region code.
 
 * Two-character language codes are defined in ISO 639-1.
 * Two-character region (country) codes are defined in ISO 3166-1 alpha-2.
 
-However, the ISO standards do not define a set of valid **combinations** of language code and region code.  As far as the ISO standards are concerned, **mn-ie** (Mongolian as written in Ireland) and **cs-jm** (Czech as written in Jamaica) are just as valid as **en-us** (English as written in the United States) or **ja-jp** (Japanese as written in Japan).
+However, the ISO standards do not define a set of valid **combinations** of language code and region code.  As far as the ISO standards are concerned, **mn-ie** (Mongolian as written in Ireland) and **cs-jm** (Czech as written in Jamaica) are perfectly valid, even if they are very unlikely.
 
-One approach to validating a language/region field is to validate the language code and the region code separately, by confirming that each is officially defined in its corresponding standard (**en** is a valid language code, and **us** is a valid country/region code).  However, this approach will miss some cases which are almost certainly mistakes.
-
-For example, in one collection of online linguistic data, I observed some Arabic data labeled with the combination **ar-ar**, which (according to the ISO codes) means "Arabic as written in Argentina".  This is almost certainly not what the creator of the data intended; the creator may have meant "Arabic as written in (Saudi) Arabia" (which would correctly be denoted **ar-sa**), or perhaps wasn't sure what region code to use and just followed the pattern found in some frequently observed combinations where the language code and region code happen to be the same (**de-de**, **es-es**, **fr-fr**, **it-it**).
+This naive approach to validation will miss some mistakes.  For example, in one collection of online linguistic data, I observed some Arabic data labeled with the combination **ar-ar**, which (according to the ISO codes) means "Arabic as written in Argentina".  This is almost certainly not what the creator of the data intended; the creator may have meant "Arabic as written in (Saudi) Arabia" (which would correctly be denoted **ar-sa**), or perhaps wasn't sure what region code to use and just followed the pattern found in some frequently observed combinations where the language code and region code happen to be the same (**de-de**, **es-es**, **fr-fr**, **it-it**).
 
 The need to validate language/region is a common enough use case that I was surprised that I could not find any existing list of likely combinations of language and region codes.  So, I researched and prepared a list.
 
