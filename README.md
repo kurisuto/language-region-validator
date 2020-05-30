@@ -7,7 +7,7 @@ This project addresses a gap in the validation of language/region codes such as 
 
 The main payload of this repository is the data file **src/data/language_region_codes.txt**, which contains a carefully researched set of *likely* language/region codes, intended as a reference for validation.  The file is in a simple format (tab-separated columns) which is deliberately agnostic in terms of programming language.
 
-For the convenience of Python programmers, this package also includes some Python3 wrapper code which loads the file and provides convenience methods for determining whether a language/region code is in the set of likely code combinations.  However, the file was deliberately not expressed as a data structure embedded in Python code; you can read and parse the file from whatever programming language you prefer.
+For the convenience of Python programmers, this package also includes some Python3 wrapper code which loads the file and provides convenience methods for determining whether a language/region code is in the set of likely code combinations.  However, the file was deliberately expressed as a flat text file rather than a data structure embedded in Python code; you can read and parse the file from whatever programming language you prefer.
 
 ## Rationale
 
